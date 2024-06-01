@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import List from './list'
+import Sidebutton from './Component/Sidebutton'
 function App() {
   const [input , Setinput] = useState()
   const [contact1 , Setcontact1] = useState()
@@ -29,11 +30,11 @@ function App() {
   <div className='flex m-4 p-2 '>
         {/* CODE FOR BOTTONS */}
       < div className='grid grid-cols-1 gap-3 h-fit w-1/4 shadow-slate-800 bg-gray-500 rounded-md'>
-        <button className='p-2 m-2 text-white text-2xl bg-slate-800 rounded-md text-left'>Search Contact</button>
-        <button className='p-2 m-2 text-white text-2xl bg-slate-800 rounded-md text-left'>Show Contact</button>
-        <button className='p-2 m-2 text-white text-2xl bg-slate-800 rounded-md text-left'>Show Duplicates</button>
-        <button className='p-2 m-2 text-white text-2xl bg-slate-800 rounded-md text-left'>Search Starred Contact</button>
-        <button className='p-2 m-2 text-white text-2xl bg-slate-800 rounded-md text-left'>Show Blocklist</button>
+        <Sidebutton tittle="Search Contact" />
+        <Sidebutton tittle="Show Contact" />
+        <Sidebutton tittle="Show Duplicates" />
+        <Sidebutton tittle="Search Starred Contact" />
+        <Sidebutton tittle="Show Blocklist" />
      </div>
          {/* CODE FOR FORM*/}
     <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
