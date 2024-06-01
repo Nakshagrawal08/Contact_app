@@ -30,11 +30,11 @@ function App() {
   <div className='flex m-4 p-2 '>
         {/* CODE FOR BOTTONS */}
       < div className='grid grid-cols-1 gap-3 h-fit w-1/4 shadow-slate-800 bg-gray-500 rounded-md'>
-        <Sidebutton tittle="Search Contact" />
-        <Sidebutton tittle="Show Contact" />
-        <Sidebutton tittle="Show Duplicates" />
-        <Sidebutton tittle="Search Starred Contact" />
-        <Sidebutton tittle="Show Blocklist" />
+        <Sidebutton buttonname="Search Contact" />
+        <Sidebutton buttonname="Show Contact" />
+        <Sidebutton buttonname="Show Duplicates" />
+        <Sidebutton buttonname="Search Starred Contact" />
+        <Sidebutton buttonname="Show Blocklist" />
      </div>
          {/* CODE FOR FORM*/}
     <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
@@ -67,5 +67,4 @@ function App() {
     </>
   )
 }
-
 export default App
