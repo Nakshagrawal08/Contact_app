@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import List from './list'
-
-
-
 function App() {
   const [input , Setinput] = useState()
   const [contact1 , Setcontact1] = useState()
@@ -65,7 +62,7 @@ function App() {
     {/* CODE FOR LIST */}
       <div className='grid grid-cols-4 gap-3 mx-8'>
           <List data={result} />
-        </div>
+      </div>
     </>
   )
 }
