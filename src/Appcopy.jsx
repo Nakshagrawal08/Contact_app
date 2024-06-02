@@ -1,7 +1,7 @@
 
 import List from './list'
 import Sidebutton from './Component/Sidebutton'
-import new_contact from './new_contact'
+
 import { useState } from 'react'
 
 
@@ -32,13 +32,22 @@ function App() {
   }
   return (
     <>
+    <div className='flex p-2 bg-slate-600'>
+        <div className='w-5/6  p-2 text-white text-3xl'>
+            Contact App
+        </div>
+        <div className='w-1/6 my-1 mx-auto'>
+            <button className='p-2 rounded-md bg-red-400 text-white text-xl'>New Contact</button>
+        </div>
+    </div>
+
   <div className='flex m-4 p-2 '>
         {/* CODE FOR BOTTONS */}
       < div className='grid grid-cols-1 gap-3 h-fit w-1/4 shadow-slate-800 bg-gray-500 rounded-md'>
         <Sidebutton buttonname="Search Contact" />
         <Sidebutton buttonname="Show Contact" />
         <Sidebutton buttonname="Show Duplicates" />
-        <Sidebutton buttonname="Search Starred Contact" />
+        <Sidebutton buttonname="Show Starred Contact" />
         <Sidebutton buttonname="Show Blocklist" />
      </div>
          {/* CODE FOR FORM*/}

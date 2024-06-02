@@ -1,17 +1,13 @@
 import React from 'react'
-
-export default function Newcontact({add}) {
-  
+import { useState } from 'react'
+export default function Newcontact({ add } ) {
   const [input , Setinput] = useState()
   const [contact1 , Setcontact1] = useState()
   const [contact2 , Setcontact2] = useState()
   const [email , Setemail] = useState()
   const [address , Setaddress] = useState()
-  
-  
- 
-  function addTask({add}){
-   add({
+   const addTask = () =>{
+  add({
      Name : input,
      Contact1 : contact1 ,
      Contact2 : contact2 ,
@@ -26,7 +22,7 @@ export default function Newcontact({add}) {
  Setaddress("")
   }
 return (
-  <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
+  
       <div className=' p-2 m-8 '>
           <div className='my-3' >
            <input type="text" name="Name" id="name" placeholder='Enter Name'value={input} onChange={(e) => Setinput(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
@@ -47,7 +43,7 @@ return (
             <button onClick={addTask}className=' bg-red-400 text-white text-lg py-2 px-12 rounded-md'>Add</button>
           </div>
         </div>
-      </div>
+      
   
   )
 }
