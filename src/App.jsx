@@ -1,8 +1,7 @@
-
+import { useState } from 'react'
 import List from './list'
 import Sidebutton from './Component/Sidebutton'
-import new_contact from './new_contact'
-import { useState } from 'react'
+import Newcontact from './Newcontact'
 
 
 function App() {
@@ -24,9 +23,8 @@ function App() {
         <Sidebutton buttonname="Show Blocklist" />
      </div>
          {/* CODE FOR FORM*/}
-      <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
-        <new_contact add={additem} />
-      </div>
+        
+      <Newcontact />
     </div>
     {/* CODE FOR LIST */}
       <div className='grid grid-cols-4 gap-3 mx-8'>

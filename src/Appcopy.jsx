@@ -1,7 +1,12 @@
-import React from 'react'
 
-export default function new_contact({add}) {
-  
+import List from './list'
+import Sidebutton from './Component/Sidebutton'
+import new_contact from './new_contact'
+import { useState } from 'react'
+
+
+function App() {
+  const [result , Setresult] = useState([])
   const [input , Setinput] = useState()
   const [contact1 , Setcontact1] = useState()
   const [contact2 , Setcontact2] = useState()
@@ -25,8 +30,19 @@ export default function new_contact({add}) {
  Setemail("")
  Setaddress("")
   }
-return (
-
+  return (
+    <>
+  <div className='flex m-4 p-2 '>
+        {/* CODE FOR BOTTONS */}
+      < div className='grid grid-cols-1 gap-3 h-fit w-1/4 shadow-slate-800 bg-gray-500 rounded-md'>
+        <Sidebutton buttonname="Search Contact" />
+        <Sidebutton buttonname="Show Contact" />
+        <Sidebutton buttonname="Show Duplicates" />
+        <Sidebutton buttonname="Search Starred Contact" />
+        <Sidebutton buttonname="Show Blocklist" />
+     </div>
+         {/* CODE FOR FORM*/}
+      <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
       <div className=' p-2 m-8 '>
           <div className='my-3' >
            <input type="text" name="Name" id="name" placeholder='Enter Name'value={input} onChange={(e) => Setinput(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
@@ -47,6 +63,14 @@ return (
             <button onClick={addTask}className=' bg-red-400 text-white text-lg py-2 px-12 rounded-md'>Add</button>
           </div>
         </div>
-  
+      </div>
+    </div>
+    {/* CODE FOR LIST */}
+      <div className='grid grid-cols-4 gap-3 mx-8'>
+          <List data={result} />
+      </div>
+      
+    </>
   )
 }
+export default App
