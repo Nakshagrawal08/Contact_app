@@ -1,35 +1,52 @@
 import React from 'react'
 
-export default function new_contact() {
+export default function new_contact({add}) {
   
-    
- const [input , Setinput] = useState()
- const [input2 , Setinput2] = useState()
- const [result , Setresult] = useState([])
+  const [input , Setinput] = useState()
+  const [contact1 , Setcontact1] = useState()
+  const [contact2 , Setcontact2] = useState()
+  const [email , Setemail] = useState()
+  const [address , Setaddress] = useState()
+  
+  
  
-
- function addTask(){
-  result.push({
-    Name : input,
-    Contact : input2 ,
-  })
-Setresult([...result])
-Setinput("")
-Setinput2("")
- }
+  function addTask({add}){
+   add({
+     Name : input,
+     Contact1 : contact1 ,
+     Contact2 : contact2 ,
+     Mail : email ,
+     Address : address 
+   })
+ 
+ Setinput("")
+ Setcontact1("")
+ Setcontact2("")
+ Setemail("")
+ Setaddress("")
+  }
 return (
-  <div className=' shadow-slate-800 rounded-md'>
-      <div className=' p-2 m-8 grid grid-cols-4 '>
-          <div >
-            <input type="text" name="Name" id="name" placeholder='Enter Name'value={input} onChange={(e) => Setinput(e.target.value)} className='p-2 text-xl text-black' />
+
+      <div className=' p-2 m-8 '>
+          <div className='my-3' >
+           <input type="text" name="Name" id="name" placeholder='Enter Name'value={input} onChange={(e) => Setinput(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
           </div>
-          <div >
-            <input type="text" name="Number" id="number" placeholder='Enter Number' value={input2} onChange={(e) => Setinput2(e.target.value)} className='p-2 text-xl text-black' />
+          <div className='my-3' >
+            <input type="text" name="Number1" id="number1" placeholder='Enter 1st Number' value={contact1} onChange={(e) => Setcontact1(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
           </div>
-          <div className=' content-center grid'>
-            <button onClick={addTask}className=' bg-red-400 py-2 px-12 rounded-md'>Add</button>
+          <div className='my-3' >
+            <input type="text" name="Number2" id="number2" placeholder='Enter 2nd Number' value={contact2} onChange={(e) => Setcontact2(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
+          </div>
+          <div className='my-3' >
+            <input type="email" name="Email" id="email" placeholder='Enter Email'value={email} onChange={(e) => Setemail(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
+          </div>
+          <div className='my-3' >
+           <input type="text" name="Address" id="address" placeholder='Enter Address'value={address} onChange={(e) => Setaddress(e.target.value)} className='p-2 text-2xl bg-slate-800 rounded-md text-white w-full ' />
+          </div>         
+          <div className=' content-center '>
+            <button onClick={addTask}className=' bg-red-400 text-white text-lg py-2 px-12 rounded-md'>Add</button>
           </div>
         </div>
-  </div>
+  
   )
 }
