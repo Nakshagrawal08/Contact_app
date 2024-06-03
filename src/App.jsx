@@ -3,6 +3,7 @@ import List from './list'
 import Sidebutton from './Component/Sidebutton'
 import Headers from './Component/Header'
 import Newcontact from './Newcontact'
+import Searchpage from './Component/Searchpage'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     result.push(add)
     Setresult([...result])
   }
+  
   return (
     <>
     <Headers />
@@ -27,9 +29,9 @@ function App() {
         <Sidebutton click ={()=> Setcurrentpage("add")} buttonname="Add Contact" />
      </div>
          {/* CODE FOR FORM*/}
-        <div className='w-3/4 shadow-xl ml-4 shadow-slate-800  bg-gray-500 rounded-md'>
+        <div className='w-3/4 shadow-xl ml-4  shadow-slate-800  bg-gray-500 rounded-md'>
         {currentpage =="empty" && <h1 className=' text-white text-center text-2xl ' > no contact</h1>}
-        {currentpage =="search" && <h1 className=' text-white text-center text-2xl ' > Search</h1>}
+        {currentpage =="search" && <Searchpage />}
         {currentpage =="show" &&  <div className='grid grid-cols-3 gap-3'> <List data={result} /> </div>}
         {currentpage =="duplicates" &&  <h1 className=' text-white text-center text-2xl ' >duplicates</h1>}
         {currentpage =="starred" && <h1 className=' text-white text-center text-2xl ' >starred</h1> }
